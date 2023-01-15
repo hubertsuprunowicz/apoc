@@ -8,6 +8,7 @@ import apoc.export.util.ExportConfig;
 import apoc.result.VirtualNode;
 import apoc.result.VirtualRelationship;
 import apoc.util.collection.Iterators;
+import net.jpountz.lz4.LZ4FrameInputStream;
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.ArchiveInputStream;
 import org.apache.commons.io.IOUtils;
@@ -23,13 +24,7 @@ import org.neo4j.values.storable.CoordinateReferenceSystem;
 import org.neo4j.values.storable.PointValue;
 import org.neo4j.values.storable.Values;
 
-import java.io.BufferedWriter;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigInteger;
 import java.net.HttpURLConnection;
@@ -392,7 +387,9 @@ public class Util {
             if (archiveType.isArchive()) {
                 return getStreamCompressedFile(urlAddress, headers, payload, archiveType);
             }
-
+            if (urlAddress.contains(".lz4")) {
+                return getStreamDecompressedLZ4File(urlAddress, headers, payload);
+            }
             StreamConnection sc = getStreamConnection(urlAddress, headers, payload);
             return sc.toCountingInputStream(compressionAlgo);
         } else if (input instanceof byte[]) {
@@ -400,6 +397,25 @@ public class Util {
         } else {
             throw new RuntimeException(ERROR_BYTES_OR_STRING);
         }
+    }
+
+    public static byte[] decompressLz4File(InputStream compressedStream) {
+        try (
+                BufferedInputStream in = new BufferedInputStream(compressedStream);
+                LZ4FrameInputStream zIn = new LZ4FrameInputStream(in)
+        ) {
+            return zIn.readAllBytes();
+        } catch (Exception e) {
+            return new byte[]{};
+        }
+    }
+
+    private static CountingInputStream getStreamDecompressedLZ4File(String urlAddress, Map<String, Object> headers, String payload) throws IOException {
+        StreamConnection sc = getStreamConnection(urlAddress, headers, payload);
+        byte[] decompressedLZ4 = decompressLz4File(sc.getInputStream());
+        InputStream stream = new ByteArrayInputStream(decompressedLZ4);
+
+        return new CountingInputStream(stream, sc.getLength());
     }
 
     private static CountingInputStream getStreamCompressedFile(String urlAddress, Map<String, Object> headers, String payload, ArchiveType archiveType) throws IOException {

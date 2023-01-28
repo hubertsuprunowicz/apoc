@@ -1,4 +1,4 @@
-package apoc.export.yarspg.generated;// Generated from YARSpg.g4 by ANTLR 4.9.3
+package apoc.export.yarspg.generated;// Generated from YARSpg.g4 by ANTLR 4.7.2
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -550,66 +550,6 @@ public class YARSpgBaseListener implements YARSpgListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitComplex_value_schema(YARSpgParser.Complex_value_schemaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterMultiset_schema(YARSpgParser.Multiset_schemaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMultiset_schema(YARSpgParser.Multiset_schemaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSet_schema(YARSpgParser.Set_schemaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSet_schema(YARSpgParser.Set_schemaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterList_schema(YARSpgParser.List_schemaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitList_schema(YARSpgParser.List_schemaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterDlist_schema(YARSpgParser.Dlist_schemaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDlist_schema(YARSpgParser.Dlist_schemaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterStruct_schema(YARSpgParser.Struct_schemaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitStruct_schema(YARSpgParser.Struct_schemaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -70,7 +70,7 @@ public class YarsPGReader {
         parser.addParseListener(new YarsPGListener(this));
 
         // Run parser
-        // Grammar generated on 06 Jan 2022 from:
+        // Grammar generated on 23 Jan 2023 from:
         // https://github.com/lszeremeta/yarspg/blob/master/yarspg/YARSpg.g4
         parser.yarspg();
         handleLackingNodes();

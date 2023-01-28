@@ -1,4 +1,4 @@
-package apoc.export.yarspg.generated;// Generated from YARSpg.g4 by ANTLR 4.9.3
+package apoc.export.yarspg.generated;// Generated from YARSpg.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -279,36 +279,6 @@ public interface YARSpgVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitComplex_value_schema(YARSpgParser.Complex_value_schemaContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link YARSpgParser#multiset_schema}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMultiset_schema(YARSpgParser.Multiset_schemaContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link YARSpgParser#set_schema}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSet_schema(YARSpgParser.Set_schemaContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link YARSpgParser#list_schema}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitList_schema(YARSpgParser.List_schemaContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link YARSpgParser#dlist_schema}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDlist_schema(YARSpgParser.Dlist_schemaContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link YARSpgParser#struct_schema}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStruct_schema(YARSpgParser.Struct_schemaContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link YARSpgParser#edge_schema}.
 	 * @param ctx the parse tree

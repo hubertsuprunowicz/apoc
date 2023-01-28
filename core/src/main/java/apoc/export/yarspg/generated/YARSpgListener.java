@@ -1,4 +1,4 @@
-package apoc.export.yarspg.generated;// Generated from YARSpg.g4 by ANTLR 4.9.3
+package apoc.export.yarspg.generated;// Generated from YARSpg.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -456,56 +456,6 @@ public interface YARSpgListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitComplex_value_schema(YARSpgParser.Complex_value_schemaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link YARSpgParser#multiset_schema}.
-	 * @param ctx the parse tree
-	 */
-	void enterMultiset_schema(YARSpgParser.Multiset_schemaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link YARSpgParser#multiset_schema}.
-	 * @param ctx the parse tree
-	 */
-	void exitMultiset_schema(YARSpgParser.Multiset_schemaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link YARSpgParser#set_schema}.
-	 * @param ctx the parse tree
-	 */
-	void enterSet_schema(YARSpgParser.Set_schemaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link YARSpgParser#set_schema}.
-	 * @param ctx the parse tree
-	 */
-	void exitSet_schema(YARSpgParser.Set_schemaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link YARSpgParser#list_schema}.
-	 * @param ctx the parse tree
-	 */
-	void enterList_schema(YARSpgParser.List_schemaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link YARSpgParser#list_schema}.
-	 * @param ctx the parse tree
-	 */
-	void exitList_schema(YARSpgParser.List_schemaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link YARSpgParser#dlist_schema}.
-	 * @param ctx the parse tree
-	 */
-	void enterDlist_schema(YARSpgParser.Dlist_schemaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link YARSpgParser#dlist_schema}.
-	 * @param ctx the parse tree
-	 */
-	void exitDlist_schema(YARSpgParser.Dlist_schemaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link YARSpgParser#struct_schema}.
-	 * @param ctx the parse tree
-	 */
-	void enterStruct_schema(YARSpgParser.Struct_schemaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link YARSpgParser#struct_schema}.
-	 * @param ctx the parse tree
-	 */
-	void exitStruct_schema(YARSpgParser.Struct_schemaContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link YARSpgParser#edge_schema}.
 	 * @param ctx the parse tree

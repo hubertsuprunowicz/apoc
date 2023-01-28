@@ -2,16 +2,10 @@ package apoc.export.yarspg;
 
 import apoc.export.yarspg.generated.YARSpgBaseListener;
 import apoc.export.yarspg.generated.YARSpgParser;
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.TokenSource;
-import org.antlr.v4.runtime.TokenStream;
-import org.antlr.v4.runtime.misc.Interval;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.neo4j.graphdb.Label;
 import org.neo4j.graphdb.RelationshipType;
 
-import java.io.InputStream;
 import java.util.*;
 
 public class YarsPGListener extends YARSpgBaseListener {

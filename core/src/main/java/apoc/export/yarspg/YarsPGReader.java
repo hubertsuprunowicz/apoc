@@ -186,28 +186,32 @@ public class YarsPGReader {
             entity.setProperty(key, stringProps);
         }
 
-        switch (getValueTypeName(firstOf)) {
-            case "Long": {
-                long[] longs = Stream.of(stringProps).mapToLong(Long::parseLong).toArray();
-                entity.setProperty(key, longs);
-                break;
-            }
-            case "Double": {
-                double[] doubles = Stream.of(stringProps).mapToDouble(Double::parseDouble).toArray();
-                entity.setProperty(key, doubles);
-                break;
-            }
-            case "Boolean": {
-                Boolean[] booleans = Arrays.stream(stringProps)
-                        .map(i -> i.equals("true"))
-                        .toArray(Boolean[]::new);
+        try {
+            switch (getValueTypeName(firstOf)) {
+                case "Long": {
+                    long[] longs = Stream.of(stringProps).mapToLong(Long::parseLong).toArray();
+                    entity.setProperty(key, longs);
+                    break;
+                }
+                case "Double": {
+                    double[] doubles = Stream.of(stringProps).mapToDouble(Double::parseDouble).toArray();
+                    entity.setProperty(key, doubles);
+                    break;
+                }
+                case "Boolean": {
+                    Boolean[] booleans = Arrays.stream(stringProps)
+                            .map(i -> i.equals("true"))
+                            .toArray(Boolean[]::new);
 
-                entity.setProperty(key, booleans);
+                    entity.setProperty(key, booleans);
+                }
+                case "String":
+                default: {
+                    entity.setProperty(key, stringProps);
+                }
             }
-            case "String":
-            default: {
-                entity.setProperty(key, stringProps);
-            }
+        } catch(Exception e) {
+            entity.setProperty(key, stringProps);
         }
     }
 
